@@ -1,0 +1,39 @@
+name: delete-manifest
+
+on: 
+  workflow_dispatch:
+    inputs:
+      code-branch:
+        description: 'branch of code repository that has been deleted'
+        required: true
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Set env vars
+        env:
+          CODE_BRANCH:  ${{ github.event.inputs.code-branch}}
+
+      - name: Check out code
+        uses: actions/checkout@v2
+    
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with: 
+          python-version: "3.x"
+
+      - run: pip install PyYAML
+        name: Install py dependencies
+     
+      - run: python delete-overlays-dir.py
+        name: Delete dir from kustomize overlays
+    
+
+      - name: Add and commit changes
+        uses: EndBug/add-and-commit@v6
+        with:
+          message: "deleted kustomize dir"
+           
