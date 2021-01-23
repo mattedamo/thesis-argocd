@@ -6,6 +6,13 @@ on:
       code-branch:
         description: 'branch of code repository that has been deleted'
         required: true
+      app-name:
+        description: 'name of the app'
+        required: true
+      tier: 
+        description: 'tier of the app'
+        required: true
+
 
 jobs:
   setup:
@@ -16,6 +23,8 @@ jobs:
       - name: Set env vars
         env:
           CODE_BRANCH:  ${{ github.event.inputs.code-branch}}
+          APP_NAME: ${{ github.event.inputs.app_name }}
+          TIER: ${{ github.event.inputs.tier }}
 
       - name: Check out code
         uses: actions/checkout@v2
@@ -24,16 +33,13 @@ jobs:
         uses: actions/setup-python@v2
         with: 
           python-version: "3.x"
-
-      - run: pip install PyYAML
-        name: Install py dependencies
-     
-      - run: python delete-overlays-dir.py
-        name: Delete dir from kustomize overlays
+          
+      - run: python delete-manifest.py
+        name: Delete manifests
     
 
       - name: Add and commit changes
         uses: EndBug/add-and-commit@v6
         with:
-          message: "deleted kustomize dir"
+          message: "deleted manifests"
            
