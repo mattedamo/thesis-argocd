@@ -20,8 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Set env vars
-        env:
+      - name: set environment variables
+        uses: allenevans/set-env@v2.0.0
+        with:
           CODE_BRANCH:  ${{ github.event.inputs.code-branch}}
           APP_NAME: ${{ github.event.inputs.app_name }}
           TIER: ${{ github.event.inputs.tier }}
