@@ -11,6 +11,7 @@ def main():
     source_repo_url = os.environ["SOURCE_REPO_URL"] #set as repo argocd secret
     app_name = os.environ["APP_NAME"]
 
+    os.makedirs("manifests/"+app_name)
     code_branch_list = code_branch.split("/")
 
     #check if exists manifests/app_name folder
