@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v2
         with:
             repository: mattedamo/${{ github.event.inputs.code-repo}}
-            token: ${{secrets.TOKEN_GITHUB_DISPATCHER}}
+            token: ${{secrets.PAT_TOKEN}}
             ref: ${{ github.event.inputs.code-branch}}
             path: code-repo
       - run: cp code-repo/input.yaml ./input.yaml
