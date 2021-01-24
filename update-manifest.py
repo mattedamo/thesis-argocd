@@ -13,10 +13,6 @@ def main():
 
     os.makedirs("manifests/"+app_name)
     code_branch_list = code_branch.split("/")
-
-    #check if exists manifests/app_name folder
-    if app_name not in os.listdir("manifests/"):
-        os.mkdir("manifests/"+app_name)
     
     working_dir = "manifests/"+app_name+"/"
     
