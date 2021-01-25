@@ -28,7 +28,7 @@ jobs:
         with:
           TIER: ${{ github.event.inputs.tier}}
           CODE_BRANCH: ${{ github.event.inputs.code-branch}}
-          APP_NAME: ${{ github.event.inputs.app_name }}
+          APP_NAME: ${{ github.event.inputs.app-name }}
           SOURCE_REPO_URL : ${{ secrets.SOURCE_REPO_URL }}
           CODE_REPO: ${{ github.event.inputs.code-repo}}
 
