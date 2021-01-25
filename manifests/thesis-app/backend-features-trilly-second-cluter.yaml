@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-features-trilly-second-cluter
+  namespace: argocd
+spec:
+  destination:
+    name: second-cluter
+    namespace: thesis-app-backend-features-trilly
+  project: defalut
+  source:
+    path: kustomize/overlays/backend/features/trilly/
+    repoURL: https://github.com/mattedamo/thesis-app-infrastructure.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      syncOptions:
+      - CreateNamespace: true
