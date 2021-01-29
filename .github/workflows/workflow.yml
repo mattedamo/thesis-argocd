@@ -38,7 +38,7 @@ jobs:
       - name: Checkout code repo
         uses: actions/checkout@v2
         with:
-            repository: mattedamo/${{ github.event.inputs.code-repo}}
+            repository: ${{ github.repository_owner }}/${{ github.event.inputs.code-repo}}
             token: ${{secrets.PAT_TOKEN}}
             ref: ${{ github.event.inputs.code-branch}}
             path: code-repo
