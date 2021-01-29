@@ -24,7 +24,7 @@ jobs:
         uses: allenevans/set-env@v2.0.0
         with:
           CODE_BRANCH:  ${{ github.event.inputs.code-branch}}
-          APP_NAME: ${{ github.event.inputs.app_name }}
+          APP_NAME: ${{ github.event.inputs.app-name }}
           TIER: ${{ github.event.inputs.tier }}
 
       - name: Check out code
