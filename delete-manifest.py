@@ -1,4 +1,4 @@
-import yaml, os
+import os
 
 
 def main():
