@@ -61,7 +61,7 @@ def main():
             automated = { "prune" : True, "selfHeal" : True}
             syncOptions = [{"CreateNamespace" : True}]
             syncPolicy = {"automated" : automated, "syncOptions" : syncOptions}
-            manifest["spec"] = {"project" : "defalut", "source" : source,  "destination" : destination, "syncPolicy" : syncPolicy}
+            manifest["spec"] = {"project" : "default", "source" : source,  "destination" : destination, "syncPolicy" : syncPolicy}
 
             #lo salvo
             with open(working_dir+manifest_name, "w") as file:
