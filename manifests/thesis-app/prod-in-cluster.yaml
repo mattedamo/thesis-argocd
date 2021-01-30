@@ -7,7 +7,7 @@ spec:
   destination:
     name: in-cluster
     namespace: thesis-app-prod
-  project: defalut
+  project: default
   source:
     path: kustomize/overlays/prod/
     repoURL: https://github.com/mattedamo/thesis-app-infrastructure.git
