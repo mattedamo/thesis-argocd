@@ -7,7 +7,7 @@ spec:
   destination:
     name: in-cluster
     namespace: thesis-app-backend-features-matteo-button
-  project: defalut
+  project: default
   source:
     path: kustomize/overlays/backend/features/matteo-button/
     repoURL: https://github.com/mattedamo/thesis-app-infrastructure.git
