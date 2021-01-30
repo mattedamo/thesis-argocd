@@ -59,7 +59,7 @@ def main():
             source = { "repoURL" : source_repo_url, "path" : path, "targetRevision" : "HEAD"}
             destination = { "name" : c, "namespace" : namespace}
             automated = { "prune" : True, "selfHeal" : True}
-            syncOptions = { "syncOptions" : [{"CreateNamespace" : True}]}
+            syncOptions = [{"CreateNamespace" : True}]
             syncPolicy = {"automated" : automated, "syncOptions" : syncOptions}
             manifest["spec"] = {"project" : "defalut", "source" : source,  "destination" : destination, "syncPolicy" : syncPolicy}
 
