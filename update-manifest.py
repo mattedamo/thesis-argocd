@@ -12,6 +12,8 @@ def main():
     app_name = os.environ["APP_NAME"]
 
     os.makedirs("manifests/"+app_name+"/", exist_ok=True)
+    if "anchor" not in os.listdir("manifests/"+app_name+"/"):
+        open("manifests/"+app_name+"/anchor", "x")
     code_branch_list = code_branch.split("/")
     
     working_dir = "manifests/"+app_name+"/"
