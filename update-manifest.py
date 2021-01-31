@@ -54,8 +54,9 @@ def main():
             #lo fillo
             manifest = {}
             manifest["apiVersion"] = "argoproj.io/v1alpha1"
-            manifest["kind"] = "Application"  
-            manifest["metadata"] = { "name" : metadata_name, "namespace" : "argocd" }
+            manifest["kind"] = "Application"
+            finalizers = ["resources-finalizer.argocd.argoproj.io"]
+            manifest["metadata"] = { "name" : metadata_name, "namespace" : "argocd", "finalizers": finalizers }
             source = { "repoURL" : source_repo_url, "path" : path, "targetRevision" : "HEAD"}
             destination = { "name" : c, "namespace" : namespace}
             automated = { "prune" : True, "selfHeal" : True, "allowEmpty" : True }
