@@ -58,7 +58,7 @@ def main():
             manifest["metadata"] = { "name" : metadata_name, "namespace" : "argocd" }
             source = { "repoURL" : source_repo_url, "path" : path, "targetRevision" : "HEAD"}
             destination = { "name" : c, "namespace" : namespace}
-            automated = { "prune" : True, "selfHeal" : True}
+            automated = { "prune" : True, "selfHeal" : True, "allowEmpty" : True }
             syncOptions = ["CreateNamespace=true"]
             syncPolicy = {"automated" : automated, "syncOptions" : syncOptions}
             manifest["spec"] = {"project" : "default", "source" : source,  "destination" : destination, "syncPolicy" : syncPolicy}
