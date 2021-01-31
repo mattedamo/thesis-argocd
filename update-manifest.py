@@ -40,7 +40,7 @@ def main():
         if manifest_name not in list_manifests:
             if code_branch == "master":
                 path = "kustomize/overlays/prod/"
-                metadata_name = code_branch + "-" + c
+                metadata_name = "prod-" + c
                 namespace = app_name+"-prod"
 
             else:
