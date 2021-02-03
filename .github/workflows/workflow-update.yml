@@ -49,8 +49,8 @@ jobs:
       - run: pip install PyYAML
         name: Install py dependencies
 
-      - name: validate config file
-        run: python validation-config-file.py
+      - name: Validation of config file
+        run: python scripts/validation-config-file.py
 
       - name: Create outputs from config file
         run: |

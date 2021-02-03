@@ -7,7 +7,7 @@ def main():
         config = yaml.load(file, Loader=yaml.FullLoader)
     if k in ["source-repo-url"]:
         if k not in config.keys():
-            raise Exception(k + " not present in config file, add it")
+            sys.exit(k + " not present in config file, add it")
         else:
             print(config[k])
 if __name__ == "__main__":
