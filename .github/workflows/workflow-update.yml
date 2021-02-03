@@ -51,7 +51,7 @@ jobs:
 
       - name: Create outputs from config file
         run: |
-          echo "##[set-output name=source-repo-url;]$(python create-outputs-from-config.py source-repo-url)"
+          echo "##[set-output name=source-repo-url;]$(python scripts/create-outputs-from-config.py source-repo-url)"
         id: from-config
   
       - name: Checkout code repo
@@ -87,7 +87,7 @@ jobs:
           fi
 
       - name: Update manifests
-        run: python update-manifest.py
+        run: python scripts/update-manifest.py
             
       - run: rm -f input.yaml
         

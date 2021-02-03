@@ -35,7 +35,7 @@ jobs:
         with: 
           python-version: "3.x"
           
-      - run: python delete-manifest.py
+      - run: python scripts/delete-manifest.py
         name: Delete manifests
     
       - name: Add and commit changes
