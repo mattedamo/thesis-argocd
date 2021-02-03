@@ -88,6 +88,14 @@ jobs:
           elif grep -q "releases" <<< "$var"; then
           cp other-repo/default-input-files/release/input.yaml ./input.yaml
           fi
+      
+      - name: set environment variables
+        uses: allenevans/set-env@v2.0.0
+        with:
+          CODE_BRANCH:  ${{ github.event.inputs.code-branch}}
+          TIER: ${{ github.event.inputs.tier}}
+          APP_NAME: ${{github.event.inputs.app-name}}
+          SOURCE_REPO_URL: ${{steps.from-config.outputs.source-repo-url}}
 
       - name: Update manifests
         run: python scripts/update-manifest.py
