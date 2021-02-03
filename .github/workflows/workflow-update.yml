@@ -49,6 +49,9 @@ jobs:
       - run: pip install PyYAML
         name: Install py dependencies
 
+      - name: validate config file
+        run: python validation-config-file.py
+
       - name: Create outputs from config file
         run: |
           echo "##[set-output name=source-repo-url;]$(python scripts/create-outputs-from-config.py source-repo-url)"
