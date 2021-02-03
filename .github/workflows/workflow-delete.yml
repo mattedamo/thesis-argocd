@@ -38,7 +38,6 @@ jobs:
       - run: python delete-manifest.py
         name: Delete manifests
     
-
       - name: Add and commit changes
         uses: EndBug/add-and-commit@v6
         with:

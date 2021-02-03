@@ -8,7 +8,7 @@ def main():
     
     tier = os.environ["TIER"]
     code_branch = os.environ["CODE_BRANCH"]
-    source_repo_url = os.environ["SOURCE_REPO_URL"] #set as repo argocd secret
+    source_repo_url = os.environ["SOURCE_REPO_URL"] 
     app_name = os.environ["APP_NAME"]
 
     os.makedirs("manifests/"+app_name+"/", exist_ok=True)
