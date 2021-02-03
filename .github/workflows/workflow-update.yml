@@ -77,7 +77,7 @@ jobs:
       
       - if: github.event.inputs.default-input-flag == 'true'
         run: |
-          var=${{github.event.inputs.code-branch}}
+          var="${{github.event.inputs.code-branch}}"
           if grep -q "master" <<< "$var"; then
           cp other-repo/default-input-files/prod/input.yaml ./input.yaml
           elif grep -q "features" <<< "$var"; then
